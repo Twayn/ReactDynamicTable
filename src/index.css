@@ -1,0 +1,98 @@
+body {
+    font: 14px "Century Gothic", Futura, sans-serif;
+    margin: 20px;
+}
+
+ol, ul {
+    padding-left: 30px;
+}
+
+.row-control {
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.react-table {
+    border-collapse: collapse;
+}
+
+.react-table th, td {
+    border: 1px solid #dddddd;
+    padding: 2px;
+}
+
+.react-table tr:nth-child(even) {
+    background: #FFFFFF;
+}
+
+.react-table tr:nth-child(odd) {
+    background: #f2f5fa;
+}
+
+.react-table th, tr:nth-child(odd):hover, tr:nth-child(even):hover {
+    background: #CDD1D5;
+}
+
+/*.react-table tr:nth-child(odd):hover, .react-table tr:nth-child(even):hover{*/
+/*background: #CDD1D5;*/
+/*}*/
+
+.pagination a {
+    color: black;
+    /*float: left;*/
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+
+.pagination a.active {
+    background-color: #337ab7;
+    color: white;
+    border: 1px solid #2e6da4;
+}
+
+.pagination a:hover {
+    background-color: #ddd;
+}
+
+.pagination a.active:hover {
+    background-color: #337ab7;
+}
+
+.row-control:hover {
+    cursor: pointer;
+}
+
+.pagination, .table-buttons, .gotoPage, .elementsOnPage {
+    vertical-align: middle;
+}
+
+.control:active {
+    opacity: 0.6;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+    filter: alpha(opacity=10);
+}
+
+.days, .hours {
+    width: 40px;
+}
+
+.react-table tr {
+    counter-increment: rowNumber;
+}
+
+.react-table td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+}
+
+.pagination {
+    white-space: nowrap;
+}
+
+.autocomplete {
+    width: 260px;
+}

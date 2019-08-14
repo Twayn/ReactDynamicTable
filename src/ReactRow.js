@@ -3,16 +3,6 @@
 class ReactRow extends React.Component {
     constructor(props){
         super(props);
-
-        this.onChangeTaskType = this.onChangeTaskType.bind(this);
-        this.onChangeTaskId = this.onChangeTaskId.bind(this);
-        this.onChangeDays = this.onChangeDays.bind(this);
-        this.onChangeHours = this.onChangeHours.bind(this);
-        this.onChangeUserName = this.onChangeUserName.bind(this);
-        this.onChangeIsRole = this.onChangeIsRole.bind(this);
-        this.onDelete = this.onDelete.bind(this);
-        this.onMoveUp = this.onMoveUp.bind(this);
-        this.onMoveDown = this.onMoveDown.bind(this);
     }
 
     onChangeTaskType(event){
@@ -41,7 +31,7 @@ class ReactRow extends React.Component {
     }
 
     onChangeIsRole(event){
-        this.props.data.isRole = event.target.value;
+        this.props.data.isRole = event.target.checked;
         this.props.onChangeRow(this.props.index, this.props.data);
     }
 
@@ -50,56 +40,57 @@ class ReactRow extends React.Component {
     }
 
     onMoveUp(){
-        this.props.onClickMove(this.props.index, 1);
+        this.props.onClickMove(this.props.index, -1);
     }
 
     onMoveDown(){
-        this.props.onClickMove(this.props.index, -1);
+        this.props.onClickMove(this.props.index, 1);
     }
 
     render() {
         return (
             <tr>
                 <td/>
+                    <td>
+                        <select value={this.props.data.taskId}
+                                onChange={this.onChangeTaskId.bind(this)}>
+                            <option value="11">Задача 1</option>
+                            <option value="13">Задача 2</option>
+                            <option value="14">Задача 3</option>
+                            <option value="15">Задача 4</option>
+                            <option value="16">Задача 5</option>
+                        </select>
+                    </td>
                 <td>
-                    <TaskSelect
-                        id={this.props.data.taskId}
-                        onChangeTaskId = {this.onChangeTaskId}
-                        index = {this.props.index}
-                    />
-                </td>
-                <td>
-                    <TypeSelect
-                        id = {this.props.data.taskType}
-                        onChangeTaskType = {this.onChangeTaskType}
-                        index = {this.props.index}
-                    />
+                    <select value={this.props.data.taskType}
+                            onChange={this.onChangeTaskType.bind(this)}>
+                        <option value="0">Тип 1</option>
+                        <option value="1">Тип 2</option>
+                    </select>
                 </td>
                 <td>
                     <input type="number" className="days" value={this.props.data.days}
-                           onChange={this.onChangeDays}/>
+                           onChange={this.onChangeDays.bind(this)}/>
                 </td>
                 <td>
                     <input type="number" className="hours" value={this.props.data.hours}
-                           onChange={this.onChangeHours}/>
+                           onChange={this.onChangeHours.bind(this)}/>
                 </td>
                 <td>
                     <input className="autocomplete" value={this.props.data.userName}
-                           onChange={this.onChangeUserName}/>
+                           onChange={this.onChangeUserName.bind(this)}/>
                 </td>
                 <td>
-                    <input type="checkbox" align="center" defaultChecked={this.props.data.isRole}
-                           onChange={this.onChangeIsRole}/>
+                    <input type="checkbox" align="center" checked={this.props.data.isRole}
+                           onChange={this.onChangeIsRole.bind(this)}/>
                 </td>
                 <td>-----</td>
                 <td>-----</td>
                 <td>-----</td>
                 <td>
-                    <Controls
-                        onDelete = {this.onDelete}
-                        onMoveUp = {this.onMoveUp}
-                        onMoveDown = {this.onMoveDown}
-                    />
+                    <span className="row-control" onClick={this.onMoveUp.bind(this)}>&#9650;</span>
+                    <span className="row-control" onClick={this.onMoveDown.bind(this)}>&#9660;</span>
+                    <span className="row-control" onClick={this.onDelete.bind(this)}>&#10006;</span>
                 </td>
             </tr>
         );

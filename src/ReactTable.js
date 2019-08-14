@@ -3,59 +3,54 @@
 class ReactTable extends React.Component {
     constructor(props) {
         super(props);
-
-        this.onChangeRow = this.onChangeRow.bind(this);
-        this.onClickDelete = this.onClickDelete.bind(this);
-        this.onClickMove = this.onClickMove.bind(this);
     }
 
-    onChangeRow(index, row){
-        const data = this.props.data.slice();
-        data[index] = row;
-
-        this.props.onChangeData(data);
+    onChangeRow(index, row) {
+        this.props.data[index] = row;
+        this.props.onChangeData(this.props.data);
     }
 
 
-    static createHeader(){
-        const names = ['№', 'Задача', 'Порядок', 'Дни', 'Часы', 'Исполнитель', 'Роль', 'Просрочено', 'Решение', 'Комментарий', 'Действия'];
+    static createHeader() {
+        const names = ['№', 'Задача', 'Порядок', 'Дни', 'Часы', 'Исполнитель', 'Роль',
+            'Просрочено', 'Решение', 'Комментарий', 'Действия'];
 
         return names.map((name, index) =>
             <th key={index}>{name}</th>
         );
     }
 
-    createRows(){
+    createRows() {
         return this.props.data.map(
             (el, index) =>
                 <ReactRow
-                    data = {this.props.data[index]}
-                    onChangeRow = {this.onChangeRow}
-                    onClickDelete = {this.onClickDelete}
-                    onClickMove = {this.onClickMove}
-                    index = {index}
+                    data={this.props.data[index]}
+                    onChangeRow={this.onChangeRow.bind(this)}
+                    onClickDelete={this.onClickDelete.bind(this)}
+                    onClickMove={this.onClickMove.bind(this)}
+                    index={index}
+                    key={index}
                 />
-        );
+        ).filter((el, index) => index >= this.props.showFrom && index <= this.props.showTo);
     }
 
-    onClickDelete(index){
+    onClickDelete(index) {
         const data = this.props.data.slice();
         data.splice(index, 1);
         this.props.onChangeData(data);
     }
 
-    onClickMove(index, direction){
+    onClickMove(index, direction) {
         const data = this.props.data.slice();
 
-        if (index === 0 && direction === 1) return;
-        if (index === data.length-1 && direction === -1) return;
+        if (index === 0 && direction === -1) return;
+        if (index === data.length - 1 && direction === 1) return;
 
-        console.log(index);
-        console.log(direction);
+        var temp = data[index];
+        data[index] = data[index + direction];
+        data[index + direction] = temp;
 
-        const movable = data[index];
-
-        data[index + direction];
+        this.props.onChangeData(data);
     }
 
     render() {

@@ -14,9 +14,10 @@ ol, ul {
 
 .react-table {
     border-collapse: collapse;
+    max-width: 100px;
 }
 
-.react-table th, td {
+.react-table th, .react-table td {
     border: 1px solid #dddddd;
     padding: 2px;
 }
@@ -29,13 +30,9 @@ ol, ul {
     background: #f2f5fa;
 }
 
-.react-table th, tr:nth-child(odd):hover, tr:nth-child(even):hover {
+.react-table th, .react-table tr:nth-child(odd):hover, .react-table tr:nth-child(even):hover {
     background: #CDD1D5;
 }
-
-/*.react-table tr:nth-child(odd):hover, .react-table tr:nth-child(even):hover{*/
-/*background: #CDD1D5;*/
-/*}*/
 
 .pagination a {
     color: black;
@@ -58,21 +55,19 @@ ol, ul {
 }
 
 .pagination a.active:hover {
-    background-color: #337ab7;
+    background-color: #0f85b7;
 }
 
 .row-control:hover {
     cursor: pointer;
 }
 
-.pagination, .table-buttons, .gotoPage, .elementsOnPage {
+.pagination, .gotoPage, .elementsOnPage {
     vertical-align: middle;
 }
 
 .control:active {
     opacity: 0.6;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
-    filter: alpha(opacity=10);
 }
 
 .days, .hours {
@@ -95,4 +90,13 @@ ol, ul {
 
 .autocomplete {
     width: 260px;
+}
+
+.navigation{
+    border-collapse: collapse;
+}
+
+.navigation th, .navigation td{
+    border: none;
+    padding: 2px;
 }

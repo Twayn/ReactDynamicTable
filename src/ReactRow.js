@@ -3,48 +3,25 @@
 class ReactRow extends React.Component {
     constructor(props){
         super(props);
+
+        this.onChangeRow = this.props.onChangeRow;
+        this.index = this.props.index;
     }
 
-    onChangeTaskType(event){
-        this.props.data.taskType = event.target.value;
-        this.props.onChangeRow(this.props.index, this.props.data);
-    }
+    onChangeUserName = (value) => this.onChangeRow(this.index, 'userName', value);
+    onChangeTaskType = (event) => this.onChangeRow(this.index, 'taskType', event.target.value);
+    onChangeTaskId   = (event) => this.onChangeRow(this.index, 'taskId', event.target.value);
+    onChangeDays     = (event) => this.onChangeRow(this.index, 'days', event.target.value);
+    onChangeHours    = (event) => this.onChangeRow(this.index, 'hours', event.target.value);
+    onChangeIsRole   = (event) => this.onChangeRow(this.index, 'isRole', event.target.checked);
 
-    onChangeTaskId(event){
-        this.props.data.taskId = event.target.value;
-        this.props.onChangeRow(this.props.index, this.props.data);
-    }
+    onDelete = () => this.props.onClickDelete(this.index);
+    onMoveUp  = () => this.props.onClickMove(this.index, -1);
+    onMoveDown  = () => this.props.onClickMove(this.index, 1);
 
-    onChangeDays(event){
-        this.props.data.days = event.target.value;
-        this.props.onChangeRow(this.props.index, this.props.data);
-    }
-
-    onChangeHours(event){
-        this.props.data.hours = event.target.value;
-        this.props.onChangeRow(this.props.index, this.props.data);
-    }
-
-    onChangeUserName(event){
-        this.props.data.userName = event.target.value;
-        this.props.onChangeRow(this.props.index, this.props.data);
-    }
-
-    onChangeIsRole(event){
-        this.props.data.isRole = event.target.checked;
-        this.props.onChangeRow(this.props.index, this.props.data);
-    }
-
-    onDelete(){
-        this.props.onClickDelete(this.props.index);
-    }
-
-    onMoveUp(){
-        this.props.onClickMove(this.props.index, -1);
-    }
-
-    onMoveDown(){
-        this.props.onClickMove(this.props.index, 1);
+    onSuggestionSelected(roleId, userId){
+        this.onChangeRow(this.index, 'roleId', roleId);
+        this.onChangeRow(this.index, 'userId', userId);
     }
 
     render() {
@@ -77,8 +54,13 @@ class ReactRow extends React.Component {
                            onChange={this.onChangeHours.bind(this)}/>
                 </td>
                 <td>
-                    <input className="autocomplete" value={this.props.data.userName}
-                           onChange={this.onChangeUserName.bind(this)}/>
+                    <div className="autocomplete">
+                        <Autocomplete
+                            userName={this.props.data.userName}
+                            onSuggestionSelected={this.onSuggestionSelected.bind(this)}
+                            onChangeUserName={this.onChangeUserName.bind(this)}
+                        />
+                    </div>
                 </td>
                 <td>
                     <input type="checkbox" align="center" checked={this.props.data.isRole}

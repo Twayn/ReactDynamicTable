@@ -18,37 +18,38 @@ class ReactDynamicTable extends React.Component {
 
     loadData(){//execute ajax
         let data = this.state.data;
-        data.push({userId: 1, roleId: 1, taskId: 13, taskType: 1, isRole: false, days: 5, hours: 1, userName: 'Алгоритм1'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм2'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм3'});
-        data.push({userId: 3, roleId: 3, taskId: 15, taskType: 1, isRole: false, days: 5, hours: 1, userName: 'Алгоритм4'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм5'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм6'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм7'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм8'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм9'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм10'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм11'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм12'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм13'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм14'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм15'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм16'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм17'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм18'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм19'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм20'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм21'});
-        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Алгоритм22'});
+        data.push({userId: 1, roleId: 1, taskId: 13, taskType: 1, isRole: false, days: 5, hours: 1, userName: 'Пользователь1'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь2'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь3'});
+        data.push({userId: 3, roleId: 3, taskId: 15, taskType: 1, isRole: false, days: 5, hours: 1, userName: 'Пользователь4'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь5'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь6'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь7'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь8'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь9'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь10'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь11'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь12'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь13'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь14'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь15'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь16'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь17'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь18'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь19'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь20'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь21'});
+        data.push({userId: 2, roleId: 2, taskId: 14, taskType: 0, isRole: true, days: 5, hours: 1, userName: 'Пользователь22'});
     }
 
     onChangeData(data){
         this.setState({data: data});
+        console.log(data);
     }
 
     onChangeElementsOnPage(event){
         this.setState({
-            elementsOnPage: event.target.value,
+            elementsOnPage: parseInt(event.target.value),
             currentPage: 1
         });
     }
@@ -56,7 +57,7 @@ class ReactDynamicTable extends React.Component {
     onChangeCurrentPage(currentPage){
         if (currentPage > this.state.pagesTotal) return;
         if (currentPage < 1) return;
-        this.setState({currentPage: currentPage});
+        this.setState({currentPage: parseInt(currentPage)});
     }
 
     onClickLeft(){
@@ -133,5 +134,5 @@ class ReactDynamicTable extends React.Component {
 
 ReactDOM.render(
     <ReactDynamicTable/>,
-    document.getElementById('root')
+    document.getElementById('dynamic-table')
 );

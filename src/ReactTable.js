@@ -5,8 +5,9 @@ class ReactTable extends React.Component {
         super(props);
     }
 
-    onChangeRow(index, row) {
-        this.props.data[index] = row;
+    onChangeRow(index, key, value) {
+        const row = this.props.data[index];
+        row[key] = value;
         this.props.onChangeData(this.props.data);
     }
 
@@ -43,12 +44,14 @@ class ReactTable extends React.Component {
     onClickMove(index, direction) {
         const data = this.props.data.slice();
 
-        if (index === 0 && direction === -1) return;
-        if (index === data.length - 1 && direction === 1) return;
+        data.splice(index+direction, 0, data.splice(index, 1)[0]); //tricky swap
 
-        var temp = data[index];
-        data[index] = data[index + direction];
-        data[index + direction] = temp;
+        // if (index === 0 && direction === -1) return;
+        // if (index === data.length - 1 && direction === 1) return;
+        //
+        // var temp = data[index];
+        // data[index] = data[index + direction];
+        // data[index + direction] = temp;
 
         this.props.onChangeData(data);
     }

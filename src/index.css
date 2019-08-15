@@ -3,13 +3,17 @@ body {
     margin: 20px;
 }
 
-ol, ul {
-    padding-left: 30px;
-}
-
 .row-control {
     font-size: 18px;
     vertical-align: middle;
+}
+
+.row-control:hover {
+    cursor: pointer;
+}
+
+.row-control:active {
+    opacity: 0.6;
 }
 
 .react-table {
@@ -20,6 +24,7 @@ ol, ul {
 .react-table th, .react-table td {
     border: 1px solid #dddddd;
     padding: 2px;
+    text-align: center;
 }
 
 .react-table tr:nth-child(even) {
@@ -32,6 +37,22 @@ ol, ul {
 
 .react-table th, .react-table tr:nth-child(odd):hover, .react-table tr:nth-child(even):hover {
     background: #CDD1D5;
+}
+
+/*Counter*/
+.react-table tr {
+    counter-increment: rowNumber;
+}
+
+.react-table td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+}
+/*End of Counter*/
+
+.pagination {
+    white-space: nowrap;
 }
 
 .pagination a {
@@ -58,38 +79,8 @@ ol, ul {
     background-color: #0f85b7;
 }
 
-.row-control:hover {
-    cursor: pointer;
-}
-
 .pagination, .gotoPage, .elementsOnPage {
     vertical-align: middle;
-}
-
-.control:active {
-    opacity: 0.6;
-}
-
-.days, .hours {
-    width: 40px;
-}
-
-.react-table tr {
-    counter-increment: rowNumber;
-}
-
-.react-table td:first-child::before {
-    content: counter(rowNumber);
-    min-width: 1em;
-    margin-right: 0.5em;
-}
-
-.pagination {
-    white-space: nowrap;
-}
-
-.autocomplete {
-    width: 260px;
 }
 
 .navigation{
@@ -99,4 +90,12 @@ ol, ul {
 .navigation th, .navigation td{
     border: none;
     padding: 2px;
+}
+
+.days, .hours {
+    width: 40px;
+}
+
+.autocomplete {
+    width: 260px;
 }
